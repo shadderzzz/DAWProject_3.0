@@ -1,6 +1,6 @@
 // Create a new router
 const express = require("express");
-const bcrypt = require('bcrypt'); // Added bcrypt for password hashing
+const bcrypt = require('bcryptjs'); // Added bcrypt for password hashing
 const mysql = require('mysql2'); // Import mysql2 for database interaction
 const saltRounds = 10; // Salt rounds for bcrypt hashing
 const router = express.Router(); // Create a new router

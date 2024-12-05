@@ -87,7 +87,7 @@ app.get('/register', (req, res) => {
 });
 
 // Stocks page route
-app.get('/stocks', (req, res) => {
+app.get('/stock', (req, res) => {
     const userId = req.session.userId;
 
     if (!userId) {

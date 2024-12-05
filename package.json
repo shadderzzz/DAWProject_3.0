@@ -17,6 +17,19 @@
   },
   "homepage": "https://github.com/shadderzzz/DAWProject_3.0#readme",
   "dependencies": {
-    "nodejs": "^0.0.0"
+    "axios": "^1.7.9",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-sanitizer": "^1.0.6",
+    "express-session": "^1.18.1",
+    "express-validator": "^7.2.0",
+    "mysql2": "^3.11.5",
+    "node": "^22.12.0",
+    "nodejs": "^0.0.0",
+    "request": "^2.88.2",
+    "stack": "^0.1.0"
   }
 }

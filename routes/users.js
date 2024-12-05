@@ -13,7 +13,7 @@ router.use(expressSanitizer());
 // Middleware to redirect if the user is not logged in
 const redirectLogin = (req, res, next) => {
     if (!req.session.userId) {
-        return res.redirect('./users/login'); // Redirect to the login page if not logged in
+        return res.redirect('/users/login'); // Redirect to the login page if not logged in
     }
     next(); // Proceed to the next middleware or route handler
 };
@@ -94,12 +94,12 @@ router.post('/registered', [
 });
 
 // Render the login form
-router.get('./login', function (req, res, next) {
+router.get('/login', function (req, res, next) {
     res.render('login.ejs'); // Renders the login form
 });
 
 // Handle login form submission
-router.post('./login', function (req, res, next) {
+router.post('/login', function (req, res, next) {
     // Sanitize user input
     req.body.username = req.sanitize(req.body.username);
     req.body.password = req.sanitize(req.body.password);
@@ -142,12 +142,12 @@ router.post('./login', function (req, res, next) {
 });
 
 // Route to logout the user and destroy the session
-router.get('./logout', redirectLogin, (req, res) => {
+router.get('/logout', redirectLogin, (req, res) => {
     req.session.destroy(err => {
         if (err) {
             return res.redirect('/');  // Redirect to home or login page if logout fails
         }
-        res.redirect('./users/login');  // Redirect to login page after logout
+        res.redirect('/users/login');  // Redirect to login page after logout
     });
 });
 

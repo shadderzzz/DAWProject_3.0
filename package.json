@@ -1,0 +1,22 @@
+{
+  "name": "dawproject_3.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadderzzz/DAWProject_3.0.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shadderzzz/DAWProject_3.0/issues"
+  },
+  "homepage": "https://github.com/shadderzzz/DAWProject_3.0#readme",
+  "dependencies": {
+    "nodejs": "^0.0.0"
+  }
+}

@@ -66,7 +66,7 @@ app.get('/', function(req, res) {
         res.render('home.ejs', { firstName });
     } else {
         // If not logged in, redirect to login page
-        res.redirect('/users/login');
+        res.redirect('./users/login');
     }
 });
 

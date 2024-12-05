@@ -13,7 +13,7 @@ router.use(expressSanitizer());
 // Middleware to redirect if the user is not logged in
 const redirectLogin = (req, res, next) => {
     if (!req.session.userId) {
-        return res.redirect('/users/login'); // Redirect to the login page if not logged in
+        return res.redirect('users/login'); // Redirect to the login page if not logged in
     }
     next(); // Proceed to the next middleware or route handler
 };
@@ -87,7 +87,7 @@ router.post('/registered', [
                 }
 
                 // Redirect to login page after successful registration
-                res.redirect('/users/login'); // Redirect to login page after successful registration
+                res.redirect('/login'); // Redirect to login page after successful registration
             });
         });
     });

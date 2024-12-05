@@ -87,7 +87,7 @@ router.post('/registered', [
                 }
 
                 // Redirect to login page after successful registration
-                res.redirect('/login'); // Redirect to login page after successful registration
+                res.redirect('/users/login'); // Redirect to login page after successful registration
             });
         });
     });

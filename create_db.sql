@@ -23,5 +23,5 @@ CREATE TABLE recent_searches (
 
 
 # Create the app user
-CREATE USER IF NOT EXISTS 'root'@'localhost' IDENTIFIED BY 'root'; 
-GRANT ALL PRIVILEGES ON login_system.* TO 'root'@'localhost';
+CREATE USER IF NOT EXISTS 'dawapp'@'localhost' IDENTIFIED BY 'qwertyuiop'; 
+GRANT ALL PRIVILEGES ON login_system.* TO 'dawapp'@'localhost';

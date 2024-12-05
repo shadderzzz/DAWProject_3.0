@@ -7,14 +7,9 @@
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/stocks">Stocks</a></li>
-        </ul>
-    </nav>
+    <div class="back-button">
+        <a href="/">Back to Menu</a>
+    </div>    
 
     <div class="container">
         <h1>Register</h1>
@@ -25,7 +20,7 @@
         <% } %>
 
         <div class="form-container">
-            <form method="POST" action="/users/registered">
+            <form method="POST" action="/users/register">
                 <label for="first">First Name:</label>
                 <input id="first" type="text" name="first" value="<%= typeof first !== 'undefined' ? first : '' %>" required />
 

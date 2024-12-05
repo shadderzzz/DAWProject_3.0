@@ -7,13 +7,10 @@
     <link rel="stylesheet" href="/css/main.css"> <!-- Link to main.css -->
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/stocks">Stocks</a></li>
-        </ul>
-    </nav>
+    <div class="back-button">
+        <a href="/">Back to Menu</a>
+    </div>
+    
 
     <div class="container">
         <h1>Login</h1>
@@ -24,7 +21,7 @@
         <% } %>
 
         <div class="form-container">
-            <form action="./users/login" method="POST">
+            <form action="/users/login" method="POST">
                 <label for="username">Username:</label>
                 <input type="text" name="username" id="username" required>
 

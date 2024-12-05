@@ -3,29 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stocks</title>
-    <!-- Link to the main.css file -->
+    <title>Menu & Home</title>
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
 </head>
 <body>
-
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
+    <div class="container">
+        <h1>Stock Market</h1>
+        <ul class="menu">
             <li><a href="/about">About</a></li>
             <li><a href="/stocks">Stocks</a></li>
-            <li><a href="/users/logout">Logout</a></li>
+            <% if (typeof userId === 'undefined') { %>
+                <li><a href="/users/login">Login</a></li>
+                <li><a href="/users/register">Register</a></li>
+            <% } else { %>
+                <li><a href="/users/logout">Logout</a></li>
+            <% } %>
         </ul>
-    </nav>
 
-    <h1>Welcome to the Stocks Homepage</h1>
-
-    <!-- Display user's first name if logged in -->
-    <% if (typeof firstName !== 'undefined') { %>
-        <p>Welcome, <strong><%= firstName %></strong>!</p>
-    <% } %>
-
-    <p>This is where you can view the stock market details, trends, and more.</p>
-
+        <!-- Conditional content based on login status -->
+        <% if (typeof firstName !== 'undefined') { %>
+            <h2>Welcome, <%= firstName %>!</h2>
+            <p>You're logged in. Explore the stock market trends and more.</p>
+        <% } else { %>
+            <h2>Welcome to the Stocks Application</h2>
+            <p>Please log in or register to access all features.</p>
+        <% } %>
+    </div>
 </body>
 </html>

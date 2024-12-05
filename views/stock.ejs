@@ -7,20 +7,10 @@
   <link rel="stylesheet" type="text/css" href="/css/main.css" />
 </head>
 <body>
+  <div class="back-button">
+    <a href="/">Back to Menu</a>
+  </div>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <ul>
-      <li><a href="/home">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <!-- Conditionally show Login or Logout based on session -->
-      <% if (!userId) { %> <!-- If user is not logged in -->
-        <li><a href="/users/login">Login</a></li>
-      <% } else { %> <!-- If user is logged in -->
-        <li><a href="/users/logout">Logout</a></li>
-      <% } %>
-    </ul>
-  </nav>
 
   <div class="container">
     <h1>Stock Search</h1>

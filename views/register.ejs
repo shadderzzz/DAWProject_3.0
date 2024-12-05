@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/stocks">Stocks</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Register</h1>
+
+        <!-- Display error message if exists -->
+        <% if (typeof errorMessage !== 'undefined') { %>
+            <p class="error"><%= errorMessage %></p>
+        <% } %>
+
+        <div class="form-container">
+            <form method="POST" action="/users/registered">
+                <label for="first">First Name:</label>
+                <input id="first" type="text" name="first" value="<%= typeof first !== 'undefined' ? first : '' %>" required />
+
+                <label for="last">Last Name:</label>
+                <input id="last" type="text" name="last" value="<%= typeof last !== 'undefined' ? last : '' %>" required />
+
+                <label for="email">Email:</label>
+                <input id="email" type="email" name="email" value="<%= typeof email !== 'undefined' ? email : '' %>" required />
+
+                <label for="username">Username:</label>
+                <input id="username" type="text" name="username" value="<%= typeof username !== 'undefined' ? username : '' %>" required />
+
+                <label for="password">Password:</label>
+                <input id="password" type="password" name="password" required />
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks</title>
+    <!-- Link to the main.css file -->
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/stocks">Stocks</a></li>
+            <li><a href="/users/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <h1>Welcome to the Stocks Homepage</h1>
+
+    <!-- Display user's first name if logged in -->
+    <% if (typeof firstName !== 'undefined') { %>
+        <p>Welcome, <strong><%= firstName %></strong>!</p>
+    <% } %>
+
+    <p>This is where you can view the stock market details, trends, and more.</p>
+
+</body>
+</html>

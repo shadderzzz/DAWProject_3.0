@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/main.css"> <!-- Link to main.css -->
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/stocks">Stocks</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Login</h1>
+
+        <!-- Display error message if exists -->
+        <% if (typeof errorMessage !== 'undefined') { %>
+            <p class="error"><%= errorMessage %></p>
+        <% } %>
+
+        <div class="form-container">
+            <form action="/users/login" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Register Link -->
+        <div class="register-link">
+            <p>
+                <a href="/register" class="register-text">Don't have an account?</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

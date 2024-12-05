@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stock Search</title>
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <!-- Conditionally show Login or Logout based on session -->
+      <% if (!userId) { %> <!-- If user is not logged in -->
+        <li><a href="/users/login">Login</a></li>
+      <% } else { %> <!-- If user is logged in -->
+        <li><a href="/users/logout">Logout</a></li>
+      <% } %>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Stock Search</h1>
+
+    <!-- Stock search form -->
+    <form id="stock-form" class="form-container">
+      <label for="stock-symbol">Enter Stock Symbol:</label>
+      <input type="text" id="stock-symbol" name="symbol" placeholder="e.g., AAPL, MSFT" required>
+      <button type="submit">Search</button>
+    </form>
+
+    <!-- Display Recent Searches -->
+    <% if (recentSearches && recentSearches.length > 0) { %>
+      <h3>Recent Searches</h3>
+      <ul>
+        <% recentSearches.forEach(function(symbol) { %>
+          <li><a href="#" class="recent-search" data-symbol="<%= symbol %>"><%= symbol %></a></li>
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <p>No recent searches.</p>
+    <% } %>
+
+    <!-- Display stock search results here -->
+    <div id="results" class="results-container">
+      <!-- Results will be displayed here -->
+    </div>
+  </div>
+
+  <script>
+    // Handle stock search form submission
+    document.getElementById('stock-form').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const symbol = document.getElementById('stock-symbol').value;
+      const response = await fetch(`/api/stock?symbol=${symbol}`);
+      const data = await response.json();
+
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = '';  // Clear previous results
+
+      if (data.error) {
+        resultsDiv.innerHTML = `<p class="error">${data.error}</p>`;
+      } else {
+        resultsDiv.innerHTML = `
+          <h2>Stock Information</h2>
+          <p><strong>Symbol:</strong> ${data.symbol}</p>
+          <p><strong>Name:</strong> ${data.name}</p>
+          <p><strong>Price:</strong> $${data.price}</p>
+          <p><strong>Date:</strong> ${data.date}</p>
+        `;
+      }
+    });
+
+    // Handle click on recent search
+    document.querySelectorAll('.recent-search').forEach((link) => {
+      link.addEventListener('click', async (event) => {
+        const symbol = event.target.getAttribute('data-symbol');
+        const response = await fetch(`/api/stock?symbol=${symbol}`);
+        const data = await response.json();
+
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = '';  // Clear previous results
+
+        if (data.error) {
+          resultsDiv.innerHTML = `<p class="error">${data.error}</p>`;
+        } else {
+          resultsDiv.innerHTML = `
+            <h2>Stock Information</h2>
+            <p><strong>Symbol:</strong> ${data.symbol}</p>
+            <p><strong>Name:</strong> ${data.name}</p>
+            <p><strong>Price:</strong> $${data.price}</p>
+            <p><strong>Date:</strong> ${data.date}</p>
+          `;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

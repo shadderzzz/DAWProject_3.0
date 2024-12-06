@@ -78,7 +78,7 @@ router.get('/login', (req, res) => {
 });
 
 // Handle login form submission
-router.post('/login', (req, res, next) => {
+router.post('/loggedin', (req, res, next) => {
     const sanitized = {
         username: req.sanitize(req.body.username),
         password: req.sanitize(req.body.password)
@@ -104,7 +104,7 @@ router.post('/login', (req, res, next) => {
             req.session.userId = user.id;
             req.session.firstName = user.first_name;
 
-            res.redirect('home');
+            res.redirect('/home');
         });
     });
 });

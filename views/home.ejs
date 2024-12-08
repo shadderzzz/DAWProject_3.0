@@ -8,26 +8,31 @@
 </head>
 <body>
     <div class="container">
-        <h1>Stock Market</h1>
-        <ul class="menu">
-            <li><a href="/about">About</a></li>
-            <li><a href="/stock">Stocks</a></li>
-            <% if (typeof userId === 'undefined') { %>
-                <li><a href="/users/login">Login</a></li>
-                <li><a href="/users/register">Register</a></li>
+        <!-- Title and Description Section -->
+        <header class="header">
+            <h1>Stock Market</h1>
+            <% if (typeof firstName !== 'undefined') { %>
+                <h2>Welcome, <%= firstName %>!</h2>
+                <p>You're logged in. Explore the stock market trends and more.</p>
             <% } else { %>
-                <li><a href="/users/logout">Logout</a></li>
+                <h2>Welcome to the Stocks Application</h2>
+                <p>Please log in or register to access all features.</p>
             <% } %>
-        </ul>
+        </header>
 
-        <!-- Conditional content based on login status -->
-        <% if (typeof firstName !== 'undefined') { %>
-            <h2>Welcome, <%= firstName %>!</h2>
-            <p>You're logged in. Explore the stock market trends and more.</p>
-        <% } else { %>
-            <h2>Welcome to the Stocks Application</h2>
-            <p>Please log in or register to access all features.</p>
-        <% } %>
+        <!-- Centered Menu -->
+        <main class="menu-wrapper">
+            <ul class="menu">
+                <li><a href="/about">About</a></li>
+                <li><a href="/stock">Stocks</a></li>
+                <% if (typeof userId === 'undefined') { %>
+                    <li><a href="/users/login">Login</a></li>
+                    <li><a href="/users/register">Register</a></li>
+                <% } else { %>
+                    <li><a href="/users/logout">Logout</a></li>
+                <% } %>
+            </ul>
+        </main>
     </div>
 </body>
 </html>

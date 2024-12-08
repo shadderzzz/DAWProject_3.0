@@ -1,4 +1,4 @@
-/* General Reset */
+/* ===== General Reset ===== */
 * {
     margin: 0;
     padding: 0;
@@ -10,11 +10,10 @@ body {
     background: linear-gradient(to bottom, #ffffff, #e6e6e6);
     color: #333;
     line-height: 1.6;
-    padding: 20px;
     min-height: 100vh;
 }
 
-/* Back Button Styling */
+/* ===== Back Button Styling ===== */
 .back-button {
     margin: 20px 0;
     text-align: left;
@@ -36,38 +35,57 @@ body {
     transform: translateY(-2px);
 }
 
-/* Main Container */
+/* ===== Main Container ===== */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    position: relative;
 }
 
-/* Header Styling */
-.container h1 {
+/* ===== Header Section (Title + Description) ===== */
+.header {
     text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
     color: #2a2a2a;
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 48px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
-/* Menu Styling */
+.header h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* ===== Menu Centering ===== */
+.menu-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Moves content to the top instead of centered */
+    height: calc(100vh - 200px); /* Reduced height so the buttons are higher up */
+}
+
 .menu {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
+    flex-direction: column;
+    gap: 20px; /* Adds spacing between each button */
 }
 
 .menu li {
-    margin: 0;
+    margin: 5px 0; /* Vertical spacing between buttons */
 }
 
 .menu li a {
@@ -75,8 +93,9 @@ body {
     font-size: 18px;
     color: white;
     background-color: #3498db;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-align: center;
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
 }
 
@@ -86,7 +105,7 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* Form Container */
+/* ===== Form Container ===== */
 .form-container {
     max-width: 600px;
     margin: 0 auto;
@@ -122,7 +141,7 @@ input:focus {
     box-shadow: 0 0 4px rgba(52, 152, 219, 0.4);
 }
 
-/* Buttons */
+/* ===== Buttons ===== */
 button {
     padding: 10px 15px;
     font-size: 16px;
@@ -140,7 +159,7 @@ button:hover {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Error Message Styling */
+/* ===== Error Message Styling ===== */
 .error {
     color: #e74c3c;
     font-weight: bold;
@@ -151,7 +170,7 @@ button:hover {
     margin-bottom: 20px;
 }
 
-/* Register Link */
+/* ===== Register Link ===== */
 .register-link {
     text-align: center;
     margin-top: 10px;
@@ -168,7 +187,7 @@ button:hover {
     color: #2980b9;
 }
 
-/* Stock Page Recent Searches */
+/* ===== Stock Page Recent Searches ===== */
 .stock-page {
     margin-top: 20px;
 }
@@ -199,7 +218,7 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
     text-align: center;
     margin-top: 30px;

@@ -68,7 +68,7 @@ app.get('/', (req, res) => {
 });
 
 // Define the home route (redirects to `/` since it uses the same template)
-app.get('/index', (req, res) => {
+app.get('./', (req, res) => {
     return res.redirect('/');
 });
 

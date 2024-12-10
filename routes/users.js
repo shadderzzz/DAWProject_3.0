@@ -116,7 +116,7 @@ router.get('/logout', redirectLogin, (req, res) => {
             console.error('Logout failed:', err);
             return res.redirect('/');
         }
-        res.redirect('./users/login');
+        res.redirect('./login');
     });
 });
 

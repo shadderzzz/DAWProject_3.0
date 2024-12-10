@@ -13,7 +13,7 @@ router.use(expressSanitizer());
 // Middleware to redirect if the user is not logged in
 const redirectLogin = (req, res, next) => {
     if (!req.session.userId) {
-        return res.redirect('.../users/login');
+        return res.redirect('/login');
     }
     next();
 };

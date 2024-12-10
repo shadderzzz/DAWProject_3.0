@@ -45,7 +45,7 @@
     document.getElementById('stock-form').addEventListener('submit', async (event) => {
       event.preventDefault();
       const symbol = document.getElementById('stock-symbol').value;
-      const response = await fetch(`/api/stock?symbol=${symbol}`);
+      const response = await fetch(`./api/stock?symbol=${symbol}`);
       const data = await response.json();
 
       const resultsDiv = document.getElementById('results');

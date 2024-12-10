@@ -91,7 +91,7 @@ app.get('/stock', (req, res) => {
     const userId = req.session.userId;
 
     if (!userId) {
-        return res.redirect('/login'); // Ensure the user is logged in
+        return res.redirect('../users/login'); // Ensure the user is logged in
     }
 
     // Query the database to get recent searches for the logged-in user

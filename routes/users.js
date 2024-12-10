@@ -66,7 +66,7 @@ router.post('../registered', [
             db.query(insertQuery, [sanitized.username, sanitized.first, sanitized.last, sanitized.email, hashedPassword], (err) => {
                 if (err) return next(err);
 
-                res.redirect('/users/login');
+                res.redirect('./users/login');
             });
         });
     });

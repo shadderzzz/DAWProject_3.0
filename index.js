@@ -64,11 +64,11 @@ app.get('/', (req, res) => {
     const userId = req.session.userId || undefined;
     const firstName = req.session.firstName || undefined;
 
-    res.render('home.ejs', { userId, firstName });
+    res.render('index.ejs', { userId, firstName });
 });
 
 // Define the home route (redirects to `/` since it uses the same template)
-app.get('/home', (req, res) => {
+app.get('/index', (req, res) => {
     return res.redirect('/');
 });
 

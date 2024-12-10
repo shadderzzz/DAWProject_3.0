@@ -104,7 +104,7 @@ router.post('/login', (req, res, next) => {
             req.session.userId = user.id;
             req.session.firstName = user.first_name;
 
-            res.redirect('./');
+            res.redirect('../');
         });
     });
 });

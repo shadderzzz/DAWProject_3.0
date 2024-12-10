@@ -24,7 +24,7 @@ router.get('/register', (req, res) => {
 });
 
 // Handle registration form submission
-router.post('../registered', [
+router.post('/registered', [
     check('email').isEmail().withMessage('Please provide a valid email address'),
     check('password').isLength({ min: 8 }).withMessage('Password must be at least 8 characters long')
 ], (req, res, next) => {

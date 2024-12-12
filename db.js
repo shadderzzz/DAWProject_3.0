@@ -1,18 +1,34 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'dawapp',
-    password: 'qwertyuiop',
-    database: 'login_system',
-});
+let connection;
 
-db.connect((err) => {
-    if (err) {
-        console.error('Database connection failed:', err);
-        process.exit(1);
-    }
-    console.log('Connected to database.');
-});
+function handleDisconnect() {
+    connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'dawapp',
+        password: 'qwertyuiop',
+        database: 'login_system'
+    });
 
-module.exports = db;
+    connection.connect((err) => {
+        if (err) {
+            console.error('Error connecting to MySQL, retrying in 2 seconds...', err);
+            setTimeout(handleDisconnect, 2000);
+        } else {
+            console.log('Connected to MySQL');
+        }
+    });
+
+    connection.on('error', (err) => {
+        console.error('MySQL error', err);
+        if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+            handleDisconnect();
+        } else {
+            throw err;
+        }
+    });
+}
+
+handleDisconnect();
+
+module.exports = connection;

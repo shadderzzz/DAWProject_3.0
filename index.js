@@ -45,7 +45,7 @@ app.use('/api', apiRoutes);
 // Define the database connection
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'dawapp',
+    user: 'dawapp', 
     password: 'qwertyuiop',
     database: 'login_system',
 });

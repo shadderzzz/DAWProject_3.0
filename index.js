@@ -87,7 +87,7 @@ app.get('/register', (req, res) => {
 });
 
 // Stocks page route
-app.get('/stock', (req, res) => {
+app.get('./stock', (req, res) => {
     const userId = req.session.userId;
 
     if (!userId) {
@@ -111,7 +111,7 @@ app.get('/stock', (req, res) => {
             const recentSearches = results.map((result) => result.symbol);
 
             // Render the stock page with recent searches
-            res.render('/stock', { userId, recentSearches });
+            res.render('stock', { userId, recentSearches });
         }
     );
 });

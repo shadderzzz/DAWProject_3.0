@@ -87,7 +87,7 @@ app.get('/register', (req, res) => {
 });
 
 // Stocks page route
-app.get('./stock', (req, res) => {
+app.get('/stock', (req, res) => {
     const userId = req.session.userId;
 
     if (!userId) {
@@ -101,7 +101,7 @@ app.get('./stock', (req, res) => {
         (err, results) => {
             if (err) {
                 console.error('Error fetching recent searches:', err);
-                return res.render('stock', {
+                return res.render('/stock', {
                     userId,
                     recentSearches: [],
                 }); // Return an empty array on error

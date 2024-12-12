@@ -111,7 +111,7 @@ app.get('/stock', (req, res) => {
             const recentSearches = results.map((result) => result.symbol);
 
             // Render the stock page with recent searches
-            res.render('stock', { userId, recentSearches });
+            res.render('/stock', { userId, recentSearches });
         }
     );
 });

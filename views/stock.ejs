@@ -65,7 +65,7 @@
     });
 
     // Handle click on recent search
-    document.querySelectorAll('./recent-search').forEach((link) => {
+    document.querySelectorAll('/recent-search').forEach((link) => {
       link.addEventListener('click', async (event) => {
         const symbol = event.target.getAttribute('data-symbol');
         const response = await fetch(`/api/stock?symbol=${symbol}`);

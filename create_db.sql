@@ -18,8 +18,7 @@ CREATE TABLE recent_searches (
     user_id INT NOT NULL,
     symbol VARCHAR(10) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) -- assuming you have a `users` table
-);
+    FOREIGN KEY (user_id) REFERENCES users(id) 
 
 
 # Create the app user

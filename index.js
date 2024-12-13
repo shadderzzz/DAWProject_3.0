@@ -125,6 +125,10 @@ app.get('/api/stock', async (req, res) => {
     // Rely on the logic defined in routes/api.js
 });
 
+const api2Router = require('./routes/api2'); // Adjust the path if necessary
+app.use('/api', api2Router); // Prefixes all routes in api2.js with '/api'
+
+
 // Start the web app listening
 app.listen(port, () =>
     console.log(`Node app listening on port ${port}!`)

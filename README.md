@@ -6,7 +6,7 @@ Then navigate into the folder with 'cd DAWProject_3.0'
 
 Then do "curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -" and "sudo apt install -y nodejs" right after, this ensures Node.js and npm are installed.
 
-Then install all imports that you have made in the application. 'npm install bcryptjs, axios, express-sanitizer, express-validator, express-session, mysql2, nodejs, request, stack, express'
+Then install all imports SEPERATELY that you have made in the application. 'npm install bcryptjs, axios, express-sanitizer, express-validator, express-session, mysql2, nodejs, request, stack, express'
 
 You can either do this or run 'npm init' which should also download all the dependencies but just incase, follow the step above
 

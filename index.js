@@ -8,6 +8,9 @@ const mysql = require('mysql2');
 // Import express-session module
 const session = require('express-session');
 
+//Import express-sanitizer module
+const expressSanitizer = require('express-sanitizer');
+
 // Import express-validator module
 var validator = require ('express-validator');
 

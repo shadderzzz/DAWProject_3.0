@@ -8,6 +8,9 @@ const mysql = require('mysql2');
 // Import express-session module
 const session = require('express-session');
 
+// Import express-validator module
+var validator = require ('express-validator');
+
 // Import API routes
 const apiRoutes = require('./routes/api');
 
@@ -15,17 +18,11 @@ const apiRoutes = require('./routes/api');
 const app = express();
 const port = 8000;
 
-// Create a session
-app.use(
-    session({
-        secret: 'somerandomstuff',
-        resave: false,
-        saveUninitialized: false,
-        cookie: {
-            expires: 600000,
-        },
-    })
-);
+// Import request module
+const request = require('request')
+
+// Create an input sanitizer
+app.use(expressSanitizer());
 
 // Set up the body parser
 app.use(express.urlencoded({ extended: true }));
@@ -38,6 +35,18 @@ app.set('views', __dirname + '/views');
 
 // Set up public folder (for css and static js)
 app.use(express.static(__dirname + '/public'));
+
+// Create a session
+app.use(
+    session({
+        secret: 'somerandomstuff',
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            expires: 600000,
+        },
+    })
+);
 
 // Use API routes
 app.use('/api', apiRoutes);

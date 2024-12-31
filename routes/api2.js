@@ -5,9 +5,9 @@ const router = express.Router(); // Create a Router
 // Define the database connection
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'dawapp', // Adjust username if needed
-    password: 'qwertyuiop', // Adjust password if needed
-    database: 'login_system'  // Adjust database name if needed
+    user: 'dawapp',
+    password: 'qwertyuiop',
+    database: 'login_system' 
 });
 
 // Handle database connection errors
